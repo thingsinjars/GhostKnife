@@ -2,6 +2,7 @@
 EXIT_STATUS=0;
 command -v phantomjs >/dev/null 2>&1 || { echo >&2 "PhantomJS not installed.  Aborting."; exit 1; }
 
+cd "$(dirname "$0")"
 phantomjs ghostknife.js $@
 EXIT_STATUS+=$?
 exit $EXIT_STATUS
