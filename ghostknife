@@ -1,8 +1,9 @@
 #!/bin/bash
 EXIT_STATUS=0;
-command -v ../../node_modules/.bin/phantomjs >/dev/null 2>&1 || { echo >&2 "PhantomJS not installed.  Aborting."; exit 1; }
 
 cd "$(dirname "$0")"
-../../node_modules/.bin/phantomjs ghostknife.js $@
+command -v ../../node_modules/phantomjs/bin/phantomjs >/dev/null 2>&1 || { echo >&2 "PhantomJS not installed.  Aborting."; exit 1; }
+
+../../node_modules/phantomjs/bin/phantomjs ghostknife.js $@
 EXIT_STATUS+=$?
 exit $EXIT_STATUS
